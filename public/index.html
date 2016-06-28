@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html ng-app="app">
-  <head >
+  <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="styles.css">
-    <title></title>
+    <title>EasyDoc</title>
   </head>
   <body ng-controller="mainCtrl">
+    <header>
+      <div>EasyDoc:A great way to keep track of patients</div>
+    </header>
+
 
     <ui-view></ui-view>
 
 
 
 
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js" charset="utf-8"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.0/angular-ui-router.js" charset="utf-8"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.js" charset="utf-8"></script>
-  <script src="js/app.js" charset="utf-8"></script>
-  <script src="js/mainCtrl.js" charset="utf-8"></script>
-  <script src="js/mainService.js" charset="utf-8"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.0/angular-ui-router.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.js"></script>
+  <script src="./js/app.js"></script>
+  <script src="./js/controllers/mainCtrl.js"></script>
+  <script src="./js/mainService.js" ></script>
   </body>
 </html>

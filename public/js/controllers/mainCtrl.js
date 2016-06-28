@@ -1,2 +1,4 @@
 angular.module("app")
-.controller("mainCtrl", function($scope, mainService){});
+.controller("mainCtrl", function($scope, mainService){
+  
+});
