@@ -8,7 +8,7 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider) {
 
     .state('home', {
             url: '/',
-            templateUrl: '../routes/home.html'
+            templateUrl: './routes/home.html'
         })
 
   });
