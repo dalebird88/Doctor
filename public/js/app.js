@@ -12,16 +12,6 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider) {
             controller:'homeCtrl'
         })
 
-    .state('login', {
-            url: '/login',
-            templateUrl: './routes/login.html'
-        })
-
-    .state('patients', {
-            url: '/patients',
-            templateUrl: './routes/patients.html'
-        })
-
     .state('singlepatient', {
             url: '/singlepatient',
             templateUrl: './routes/singlepatient.html'
