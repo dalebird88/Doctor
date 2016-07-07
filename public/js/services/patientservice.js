@@ -4,7 +4,7 @@ angular.module('app').service('patientservice', function(){
         method:"GET",
         url:'localhost:3000/patients',
 
-    })).then(function(response){
+    }).then(function(response){
      console.log(response);
      deferred.resolve(response.data.results);
    })

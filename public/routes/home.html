@@ -2,25 +2,25 @@
 
 <div class="maincontain" >
   <div id='home'>
-    <div id="login">
+    <div id="login" ng-model="login">
     Login:
     <input placeholder="Username" class="login">
     <input placeholder="Password" class="login">
     <button>Submit</button>
 
     </div>
-    <div id="register">
+    <form id="register"  ng-model="register">
       Register:
-      <input placeholder="Name" class="register">
-      <input placeholder="Kind of Doctor" class="register">
-      <input placeholder="Hospital Name" class="register">
-      <input placeholder="City" class="register">
-      <input placeholder="State" class="register">
-      <input placeholder="Username" class="register">
-      <input placeholder="Password" class="register">
-      <input placeholder="Confirm Password" class="register">
+      <input ng-model="user.name" placeholder="Name" class="register">
+      <input ng-model="user.type" placeholder="Kind of Doctor" class="register">
+      <input ng-model="user.hospital" placeholder="Hospital Name" class="register">
+      <input ng-model="user.city" placeholder="City" class="register">
+      <input ng-model="user.state" placeholder="State" class="register">
+      <input ng-model="user.username" placeholder="Username" class="register">
+      <input ng-model="user.password" placeholder="Password" class="register">
+      <!-- <input ngmodel="username" placeholder="Confirm Password" class="register"> -->
 
-      <button>Submit</button>
-    </div>
+      <button ng-click="createUser(user)">Submit</button>
+    </form>
   </div>
 </div>
