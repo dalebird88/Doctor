@@ -2,25 +2,33 @@
 <html ng-app="app">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="styles.css">
     <title>EasyDoc</title>
   </head>
   <body ng-controller="mainCtrl">
     <header>
-      <div>EasyDoc:A great way to keep track of patients</div>
+      <div id="headtext1">EasyDoc:A great way to keep track of patients</div>
+      <div id="headtext2">About Us</div>
+      <div id="headtext3">Contact Us</div>
     </header>
 
-
-    <ui-view></ui-view>
-
+      <ui-view></ui-view>
 
 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.0/angular-ui-router.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.js"></script>
+    <script src="./js/app.js"></script>
+    <!--Controllers -->
+      <script src="./js/controllers/mainCtrl.js"></script>
+      <script src="./js/controllers/patientCtrl.js" ></script>
+      <script src="./js/controllers/homeCtrl.js" ></script>
+      <script src="./js/controllers/singlepatient.js" ></script>
+      <script src="./js/controllers/userCtrl.js" ></script>
+    <!--Services -->
+      <script src="./js/services/mainService.js" ></script>
+      <script src="./js/services/patientservice.js" ></script>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.0/angular-ui-router.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.js"></script>
-  <script src="./js/app.js"></script>
-  <script src="./js/controllers/mainCtrl.js"></script>
-  <script src="./js/mainService.js" ></script>
   </body>
 </html>
