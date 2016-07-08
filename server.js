@@ -24,6 +24,7 @@ var port = 3000;
 app.post('/users', function(req, res, next){
   User.create(req.body, function(err, user){
 
+
     if (err){
       return res.send(err);
     }
@@ -32,7 +33,7 @@ app.post('/users', function(req, res, next){
 })
 
 // get all users
-app.get('/users', function(req, res, next){
+app.get('/allusers', function(req, res, next){
   User.find(req.body, function(err, user){
 
     if (err){
@@ -43,20 +44,21 @@ app.get('/users', function(req, res, next){
 })
 
 // login
-app.post('/users', function(req, res, next){
-  User.findone(req.body, function(err, user){
-
-    if (err){
-      return res.send(err);
+app.post('/login', function(req, res, next){
+  User.findOne({username: req.body.username}, function(err, user){
+    if (!user || err) {
+      return res.send(err)
     }
-    return res.send(user);
+    else if(user.password === req.body.password){
+        return res.send(user);
+    }
   })
 })
 
 
 
 // finding patinents linked to doctor
-app.get('/patients', function(req, res, next){
+app.get('/mypatients', function(req, res, next){
 
     var ref = []
     for (var i = 0; i < patients.length; i++){

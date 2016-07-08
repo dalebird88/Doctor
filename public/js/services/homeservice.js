@@ -8,5 +8,10 @@ angular.module("app")
       return res.data;
     })
   }
-
+  this.userLogin = function(login){
+    return $http.post('/login', login).then(function(res){
+      self.user =res.data;
+      return res.data;
+    })
+  }
 })
