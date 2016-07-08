@@ -4,9 +4,9 @@
   <div id='home'>
     <div id="login" ng-model="login">
     Login:
-    <input placeholder="Username" class="login">
-    <input placeholder="Password" class="login">
-    <button>Submit</button>
+    <input placeholder="Username" class="login" ng-model="login.username">
+    <input placeholder="Password" class="login" ng-model="login.password">
+    <button ng-click="userLogin(login)">Submit</button>
 
     </div>
     <form id="register"  ng-model="register">

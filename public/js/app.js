@@ -19,7 +19,8 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider) {
 
     .state('user', {
             url: '/user',
-            templateUrl: './routes/user.html'
+            templateUrl: './routes/user.html',
+            controller:'userCtrl'
         })
 
   });
