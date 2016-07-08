@@ -3,7 +3,7 @@ var axios = require('axios');
 var bodyparser = require('body-parser');
 var cors = require('cors');
 var express = require('express');
-var express_session = require('express-session');
+var expressSession = require('express-session');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/doctor');
 var User = require('./userschema.js');
@@ -15,7 +15,11 @@ var app = express();
 app.use(bodyparser.json());
 
 app.use(express.static('public'));
-
+app.use(expressSession({
+  secret: "secret tunnel",
+  resave: false,
+  saveUninitialized: true
+}));
 var port = 3000;
 
 
@@ -23,8 +27,6 @@ var port = 3000;
 
 app.post('/users', function(req, res, next){
   User.create(req.body, function(err, user){
-
-
     if (err){
       return res.send(err);
     }
@@ -50,24 +52,35 @@ app.post('/login', function(req, res, next){
       return res.send(err)
     }
     else if(user.password === req.body.password){
+        req.session.user = user;
+        console.log(req.session.user);
         return res.send(user);
     }
   })
 })
 
+//create new patient
+app.post('/patient', function(req, res, next){
+  req.body.doctorid = req.session.user._id;
+  Patient.create(req.body, function(err, patient){
+    if(err){
+      return res.send(err);
+    }
+    return res.send(patient);
+  })
+})
 
 
 // finding patinents linked to doctor
 app.get('/mypatients', function(req, res, next){
-
-    var ref = []
-    for (var i = 0; i < patients.length; i++){
-      if (users.username === patients.doctor[i]){
-          ref.push(patients[i]);
-      }
+  Patient.find({doctorid:req.session.user._id}, function(err, patients){
+    if(err){
+      return res.send(err);
     }
-    console.log(ref);
-    res.send(ref);
+
+    console.log(patients);
+    res.send(patients);
+  })
 })
 
 

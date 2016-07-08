@@ -14,7 +14,7 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider) {
 
     .state('singlepatient', {
             url: '/singlepatient',
-            templateUrl: './routes/singlepatient.html'
+            templateUrl: './routes/singlepatient.html',
             controller: 'spCtrl'
         })
 
