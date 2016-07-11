@@ -4,7 +4,6 @@ var Schema = mongoose.Schema;
 var patientSchema = new Schema({
   name: String,
   email:String,
-  doctor: String,
   doctorid: {type:Schema.Types.ObjectId, ref:'User'},
   history:String,
   notes: String

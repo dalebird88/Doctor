@@ -63,6 +63,7 @@ app.post('/login', function(req, res, next){
 app.post('/patient', function(req, res, next){
   req.body.doctorid = req.session.user._id;
   Patient.create(req.body, function(err, patient){
+    console.log(err, patient)
     if(err){
       return res.send(err);
     }

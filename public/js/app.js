@@ -23,5 +23,9 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider) {
             templateUrl: './routes/user.html',
             controller:'userCtrl'
         })
-
+    .state('addpatient', {
+            url:'/addpatient',
+            templateUrl:'./routes/addpatient.html',
+            controller:'apCtrl'
+        })
   });
