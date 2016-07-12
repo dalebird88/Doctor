@@ -1,7 +1,12 @@
-<div class="user">{{user}}</div>
+<div class="user">Welcome Dr. {{user.name}}</div>
 
 <div ng-repeat="patient in thesePatients" class="userpat">
-  {{patient.name}}, {{patient.email}} <button ng-click="viewPatient(patient._id)">View Patient</button>
+  <div class="userpat">
+    {{patient.name}}, {{patient.email}}
+  </div>
+  <button ng-click="viewPatient(patient._id)">
+    View Patient
+  </button>
 </div>
 
-<button ui-sref='addpatient'>Add Patient</button>
+<button id="addpatbut" ui-sref='addpatient'>Add Patient</button>

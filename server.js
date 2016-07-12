@@ -30,8 +30,10 @@ app.post('/users', function(req, res, next){
     if (err){
       return res.send(err);
     }
+    req.session.user=user;
     return res.send(user);
   })
+
 })
 
 // get all users
