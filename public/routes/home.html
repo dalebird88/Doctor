@@ -5,7 +5,7 @@
     <div id="login" ng-model="login">
     Login:
     <input placeholder="Username" class="login" ng-model="login.username">
-    <input placeholder="Password" class="login" ng-model="login.password">
+    <input type="password" placeholder="Password" class="login" ng-model="login.password">
     <button ng-click="userLogin(login)">Submit</button>
 
     </div>
@@ -17,7 +17,7 @@
       <input ng-model="user.city" placeholder="City" class="register">
       <input ng-model="user.state" placeholder="State" class="register">
       <input ng-model="user.username" placeholder="Username" class="register">
-      <input ng-model="user.password" placeholder="Password" class="register">
+      <input type="password" ng-model="user.password" placeholder="Password" class="register">
       <!-- <input ngmodel="username" placeholder="Confirm Password" class="register"> -->
 
       <button ng-click="createUser(user)">Submit</button>

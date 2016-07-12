@@ -1,0 +1,9 @@
+<form ng-model="patient" class="spboxes">
+  Name: <input type="text" ng-model="thisPatient.name" class="namebox">
+  Email: <input type="text" ng-model= "thisPatient.email" class="emailbox">
+    <br>
+  History: <textarea type="text" ng-model="thisPatient.history" class="histbox"></textarea>
+  Notes: <textarea type="text" ng-model="thisPatient.notes" class="notebox"></textarea>
+    <br>
+  <button ng-click="updatePatient(thisPatient)" class="updatebutton">Update Data</button>
+</form>

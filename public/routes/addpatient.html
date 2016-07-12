@@ -1,10 +1,10 @@
-<div ng-model="newpat">
+<div ng-model="newpat" class="addpat">
   <input type="text" placeholder="Name" class="apbox" id="name" ng-model="newpat.name" >
-  <input type="text" placeholder="Email"c lass="apbox" id="email" ng-model="newpat.email">
-  <input type="text" placeholder="History" class="apbox" id="history"ng-model="newpat.history">
-  <input type="text" placeholder="Notes" class="apbox" id="notes" ng-model="newpat.notes">
+  <input type="text" placeholder="Email"class="apbox" id="email" ng-model="newpat.email">
+  <textarea type="text" placeholder="History" class="apbox" id="history"ng-model="newpat.history"></textarea>
+  <textarea type="text" placeholder="Notes" class="apbox" id="notes" ng-model="newpat.notes"></textarea>
   <button ng-click="createPatient(newpat)">Submit</button>
 </div>
 
 
-<footer ui-sref="user"> Back </footer>
+<footer class="backbutton" ui-sref="user"> Back </footer>

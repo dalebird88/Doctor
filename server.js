@@ -49,12 +49,15 @@ app.get('/allusers', function(req, res, next){
 app.post('/login', function(req, res, next){
   User.findOne({username: req.body.username}, function(err, user){
     if (!user || err) {
-      return res.send(err)
+      return res.status(500).send(err);
     }
     else if(user.password === req.body.password){
         req.session.user = user;
         console.log(req.session.user);
         return res.send(user);
+    }
+    else{
+      return res.status(500).send(err);
     }
   })
 })
@@ -63,7 +66,7 @@ app.post('/login', function(req, res, next){
 app.post('/patient', function(req, res, next){
   req.body.doctorid = req.session.user._id;
   Patient.create(req.body, function(err, patient){
-    console.log(err, patient)
+
     if(err){
       return res.send(err);
     }
@@ -79,11 +82,37 @@ app.get('/mypatients', function(req, res, next){
       return res.send(err);
     }
 
-    console.log(patients);
     res.send(patients);
   })
 })
+//singlepatient
+app.get('/sp/:patientId',function(req, res, next){
+  Patient.findById(req.params.patientId, function(err, patient){
+    if (err){
+      return res.send(err);
+    }
+    else{
+      return res.send(patient);
+    }
 
+  })
+
+})
+
+//update patient info
+
+app.put('/spupdate/:patientId', function(req, res, next){
+  console.log(req.body);
+  Patient.findByIdAndUpdate(req.params.patientId, req.body, function(err, result){
+    console.log(err, result);
+    if (err){
+      return res.send(err);
+    }
+    else{
+      res.send(result);
+    }
+  })
+})
 
 app.listen(port, function(){
   console.log('Listening on port ', port);

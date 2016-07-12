@@ -13,9 +13,14 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider) {
         })
 
     .state('singlepatient', {
-            url: '/singlepatient',
+            url: '/singlepatient/:patientId',
             templateUrl: './routes/singlepatient.html',
-            controller: 'spCtrl'
+            controller: 'spCtrl',
+            resolve:{
+              patient: function($stateParams, spService){
+                return spService.getPatient($stateParams.patientId)
+              }
+            }
         })
 
     .state('user', {
